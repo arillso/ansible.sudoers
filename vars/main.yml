@@ -1,0 +1,4 @@
+# vars file for sbaerlocher.sudoers
+---
+sudoers_dependencies:
+  - sudo

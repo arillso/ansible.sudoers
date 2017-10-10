@@ -1,0 +1,63 @@
+---
+sudo: required
+dist: trusty
+
+language: python
+python: "2.7"
+
+env:
+  - ANSIBLE_VERSION=latest
+  - ANSIBLE_VERSION=2.3.2.0
+  - ANSIBLE_VERSION=2.3.1.0
+  - ANSIBLE_VERSION=2.3.0.0
+  - ANSIBLE_VERSION=2.2.3.0
+  - ANSIBLE_VERSION=2.2.2.0
+  - ANSIBLE_VERSION=2.2.1.0
+  - ANSIBLE_VERSION=2.2.0.0
+  - ANSIBLE_VERSION=2.1.6
+  - ANSIBLE_VERSION=2.1.5
+  - ANSIBLE_VERSION=2.1.4
+  - ANSIBLE_VERSION=2.1.3
+  - ANSIBLE_VERSION=2.1.2
+  - ANSIBLE_VERSION=2.1.1.0
+  - ANSIBLE_VERSION=2.1.0.0
+  - ANSIBLE_VERSION=2.0.2.0
+  - ANSIBLE_VERSION=2.0.1.0
+  - ANSIBLE_VERSION=2.0.0.2
+  - ANSIBLE_VERSION=2.0.0.1
+  - ANSIBLE_VERSION=2.0.0.0
+
+branches:
+  only:
+    - master
+
+before_install:
+  - sudo apt-get update -qq
+
+install:
+  # Install Ansible.
+  - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible; else pip install ansible==$ANSIBLE_VERSION; fi
+  - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible-lint; fi
+
+script:
+  # Check the role/playbook's syntax.
+  - ansible-playbook -i tests/inventory tests/test.yml --syntax-check
+
+  # Run the role/playbook with ansible-playbook.
+  - ansible-playbook -i tests/inventory tests/test.yml -vvvv
+
+  # Run the role/playbook again, checking to make sure it's idempotent.
+  - >
+    ansible-playbook -i tests/inventory tests/test.yml
+    | grep -q 'changed=0.*failed=0'
+    && (echo 'Idempotence test: pass' && exit 0)
+    || (echo 'Idempotence test: fail' && exit 1)
+
+  - if [ "$ANSIBLE_VERSION" = "latest" ]; then ansible-lint tests/test.yml || true; fi
+
+notifications:
+  email: false
+  hipchat:
+    rooms:
+      secure: lBUbBELlSnblttgr37EJ7tMvUYgKETZGPOa/eN4zCUPW13zVKHuNKMkY9Mc8rqxV+VJAXag8YijzN3YOTqRNLLHuu0eipp3wmDd3ku8CK/r/E6nqz6EK+zv2absAzzFVxf74LjGpqFgMvvxvm8/F6FlS7EODVRCmqsG6MnguU+ixb4TJkn8DcAOlu7+VmdejXMo5ZwgLMRO6HF9xk0i7679y5p3NalRmzTUDuZzw9tn8qbCJzqvNe/pXovbD/G8YWinsRd3aVQF5Sh0dd8rRnxDh4luhrKPmfEc61ug15uVdH4UPI0nqhexCtK8f5vkahbbXHbmW2pKiDLv6WVroqe3dSivZSieeSo1rqYrEXPMj5khDdZpKLkQl1pgyhemqRyHm89i/BIHB9rEPgiv4uKWc+dAWw9iNjsCFgWWVW4JsG+VY/DBkck/7sAxFHW6i3+x73qr42I8+3tE4N1AURD7qg2uGo6Ut/CLQG/LqQf/5hZ2JEBqSO9QaU8iJNsAZf7DVcdf3aLP7l2thMjaJtGAYLMPF2r64tY+mMYmZm177EK7U9F10XdlXGUHiqr80cj6kmuwF99oIpj9qo1btKm+uo17ZfTtTL8D/zC8ICG73GeDceC0CpCfEpiJFK2Cc5Oa6TUwPnB2zjfCrpT3d3p3X26Zh/r377k2hRFW1qcA=
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/

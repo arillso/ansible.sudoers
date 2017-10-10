@@ -1,0 +1,47 @@
+---
+# tasks file for sbaerlocher.sudoers
+
+- name: add OS specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - files:
+        - "{{ ansible_distribution }}-{{ ansible_distribution_version }}.yml"
+        - "{{ ansible_distribution }}.yml"
+        - "{{ ansible_os_family }}.yml"
+        - "defaults.yml"
+      paths:
+        -  "vars"
+  tags:
+    - configuration
+    - packages
+
+- name: install
+  package:
+    name: "{{ item }}"
+    state: latest
+  with_items: "{{ sudoers_dependencies }}"
+
+- name: update specific configuration files
+  template:
+    src: etc/sudoers.d/sudoers.j2
+    dest: "/etc/sudoers.d/{{ item.key }}"
+    validate: "visudo -cf %s"
+    owner: root
+    group: root
+    mode: 0440
+  become: true
+  with_dict: "{{ sudoers_sudoers_d_files }}"
+  tags:
+    - configuration
+
+- name: update global configuration file
+  template:
+    src: etc/sudoers.j2
+    dest: /etc/sudoers
+    validate: "visudo -cf %s"
+    owner: root
+    group: root
+    mode: 0440
+  become: true
+  tags:
+    - configuration

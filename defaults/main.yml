@@ -1,0 +1,7 @@
+# defaults file for sbaerlocher.sudoers
+---
+sudoers_sudoers:
+  defaults: "{{ sudoers_sudoers_preset_defaults }}"
+  privileges: "{{ sudoers_sudoers_preset_privileges }}"
+
+sudoers_sudoers_d_files: {}
