@@ -1,14 +1,20 @@
-## sudoers
+# Ansible Role: sshd
 
-[![Build Status](https://travis-ci.org/sbaerlocher/ansible-sudoers.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-sudoers) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-sudoers-blue.svg)](https://galaxy.ansible.com/tersmitten/sudoers)
+## Description
 
 Manage sudoers and sudoers.d in Debian-like systems.
 
-#### Requirements
+## Installation
+
+```
+$ ansible-galaxy install sbaerlocher.sudoers
+```
+
+## Requirements
 
 None
 
-#### Variables
+## Role Variables
 
 | Variable             | Default     | Comments (type)                                   |
 | :---                 | :---        | :---                                              |
@@ -52,9 +58,7 @@ None
 
 None
 
-#### Example(s)
-
-##### Simple configuration
+## Example Playbook
 
 ```yaml
 ---
@@ -63,7 +67,7 @@ None
     - sbaerlocher.sudoers
 ```
 
-##### Complex configuration
+### Complex configuration
 
 ```yaml
 ---
@@ -113,10 +117,12 @@ None
           - name: test
             entry: "ALL=(ALL:ALL) ALL"    
 ```
+## Changelog
 
-#### License
+### 1.0
 
-MIT
+* Initial release
+
 
 ## Author
 
