@@ -16,12 +16,14 @@
     - packages
 
 - name: install
+  become: true
   package:
     name: "{{ item }}"
     state: latest
   with_items: "{{ sudoers_dependencies }}"
 
 - name: update specific configuration files
+  become: true
   template:
     src: etc/sudoers.d/sudoers.j2
     dest: "/etc/sudoers.d/{{ item.key }}"
@@ -35,6 +37,7 @@
     - configuration
 
 - name: update global configuration file
+  become: true
   template:
     src: etc/sudoers.j2
     dest: /etc/sudoers
