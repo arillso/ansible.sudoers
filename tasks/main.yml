@@ -31,7 +31,6 @@
     owner: root
     group: root
     mode: 0440
-  become: true
   with_dict: "{{ sudoers_sudoers_d_files }}"
   tags:
     - configuration
@@ -45,6 +44,5 @@
     owner: root
     group: root
     mode: 0440
-  become: true
   tags:
     - configuration
