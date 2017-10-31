@@ -119,6 +119,10 @@ None
 ```
 ## Changelog
 
+### 1.1
+
+* rename role name
+
 ### 1.0
 
 * Initial release
