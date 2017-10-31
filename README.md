@@ -7,7 +7,7 @@ Manage sudoers and sudoers.d in Debian-like systems.
 ## Installation
 
 ```
-$ ansible-galaxy install sbaerlocher.sudoers
+$ ansible-galaxy install arillso.sudoers
 ```
 
 ## Requirements
@@ -64,7 +64,7 @@ None
 ---
 - hosts: all
   roles:
-    - sbaerlocher.sudoers
+    - arillso.sudoers
 ```
 
 ### Complex configuration
@@ -73,7 +73,7 @@ None
 ---
 - hosts: all
   roles:
-    - sbaerlocher.sudoers
+    - arillso.sudoers
   vars:
     sudoers_sudoers:
       defaults:
@@ -118,6 +118,10 @@ None
             entry: "ALL=(ALL:ALL) ALL"    
 ```
 ## Changelog
+
+### 1.1
+
+* rename role name
 
 ### 1.0
 
