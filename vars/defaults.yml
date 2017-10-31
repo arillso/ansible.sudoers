@@ -1,4 +1,4 @@
-# vars file for sbaerlocher.sudoers
+# vars file for arillso.sudoers
 ---
 sudoers_sudoers_preset_defaults:
   - env_reset
