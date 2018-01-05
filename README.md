@@ -6,8 +6,8 @@ Manage sudoers and sudoers.d in Debian-like systems.
 
 ## Installation
 
-```
-$ ansible-galaxy install arillso.sudoers
+```bash
+ansible-galaxy install arillso.sudoers
 ```
 
 ## Requirements
@@ -115,29 +115,30 @@ None
             members: 128.138.0.0/255.255.0.0
         privileges:
           - name: test
-            entry: "ALL=(ALL:ALL) ALL"    
+            entry: "ALL=(ALL:ALL) ALL"
 ```
+
 ## Changelog
 
 ### 1.1
 
 * rename role name
+* add new tests
 
 ### 1.0
 
 * Initial release
-
 
 ## Author
 
 * [Simon Bärlocher](https://sbaerlocher.ch)
 * Mark van Driel
 * Mischa ter Smitten
- 
+
 ## License
 
 This project is under the MIT License. See the [LICENSE](https://sbaerlo.ch/licence) file for the full license text.
 
 ## Copyright
 
-(c) 2017, Simon Bärlocher
+(c) 2018, Simon Bärlocher
