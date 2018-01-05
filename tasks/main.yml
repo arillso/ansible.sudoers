@@ -10,7 +10,7 @@
         - "{{ ansible_os_family }}.yml"
         - "defaults.yml"
       paths:
-        -  "vars"
+        - "vars"
   tags:
     - configuration
     - packages
@@ -19,7 +19,6 @@
   become: true
   package:
     name: "{{ item }}"
-    state: latest
   with_items: "{{ sudoers_dependencies }}"
 
 - name: update specific configuration files

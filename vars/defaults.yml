@@ -8,4 +8,4 @@ sudoers_sudoers_preset_privileges:
   - name: root
     entry: 'ALL=(ALL:ALL) ALL'
   - name: '%sudo'
-    entry: 'ALL=(ALL) NOPASSWD:ALL'
+    entry: 'ALL=NOPASSWD: ALL'
