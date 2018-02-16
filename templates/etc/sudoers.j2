@@ -7,7 +7,7 @@
 #
 # See the man page for details on how to write a sudoers file.
 #
-{% for item in sudoers_sudoers.defaults %}
+{% for item in (sudoers_use_os_defaults) | ternary(sudoers_os_defaults.defaults + sudoers_sudoers.defaults | default([]), sudoers_sudoers.defaults | default([])) %}
 {% if item != '' %}
 Defaults {{ item }}
 {% endif %}
@@ -34,7 +34,7 @@ Runas_Alias {{ item.name }} = {{ item.members }}
 {% endfor %}
 
 # User/Group privilege specification
-{% for item in sudoers_sudoers.privileges | default([]) %}
+{% for item in (sudoers_use_os_defaults) | ternary(sudoers_os_defaults.privileges + sudoers_sudoers.privileges | default([]), sudoers_sudoers.privileges | default([])) %}
 {{ item.name }} {{ item.entry }}
 {% endfor %}
 
