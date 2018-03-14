@@ -1,6 +1,12 @@
 # defaults file for arillso.sudoers
 ---
 sudoers_sudoers:
+  defaults: []
+  privileges: []
+
+sudoers_use_os_defaults: True
+
+sudoers_os_defaults:
   defaults: "{{ sudoers_sudoers_preset_defaults }}"
   privileges: "{{ sudoers_sudoers_preset_privileges }}"
 
