@@ -121,6 +121,11 @@ None
 
 ## Changelog
 
+### 1.2
+
+* Always prepend OS defaults and privileges unless disabled
+* fix variables files found
+
 ### 1.1
 
 * rename role name
