@@ -53,6 +53,7 @@ None
 | `sudoers_sudoers_d_files.key.privileges` | `[]`   | List of privileges |
 | `sudoers_sudoers_d_files.key.privileges.name` | | Name of user or group (group should be prefixed with '%') |
 | `sudoers_sudoers_d_files.key.privileges.entry`| | A privilege entry |
+| `sudoers_use_os_defaults` | `True` | Includes default rules that ship with target distro (boolean) |
 
 ## Dependencies
 
@@ -119,6 +120,11 @@ None
 ```
 
 ## Changelog
+
+### 1.2
+
+* Always prepend OS defaults and privileges unless disabled
+* fix variables files found
 
 ### 1.1
 
