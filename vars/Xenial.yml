@@ -10,4 +10,4 @@ sudoers_sudoers_preset_privileges:
   - name: '%admin'
     entry: 'ALL=(ALL) ALL'
   - name: '%sudo'
-    entry: 'ALL=(ALL:ALL) ALL'
+    entry: 'ALL=NOPASSWD: ALL'
