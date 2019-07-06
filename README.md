@@ -1,8 +1,10 @@
-# Ansible Role: sshd
+# Ansible Role: sudoers
+
+[![Build Status](https://img.shields.io/travis/arillso/ansible.sudoers.svg?branch=master&style=popout-square)](https://travis-ci.org/arillso/ansible.sudoers) [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=popout-square)](https://sbaerlo.ch/licence) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-sudoers-blue.svg?style=popout-square)](https://galaxy.ansible.com/arillso/sudoers) [![Ansible Role](https://img.shields.io/ansible/role/d/21620.svg?style=popout-square)](https://galaxy.ansible.com/arillso/sudoers)
 
 ## Description
 
-Manage sudoers and sudoers.d in Debian-like systems.
+Manage sudoers and sudoers.d in Linux.
 
 ## Installation
 
@@ -16,44 +18,44 @@ None
 
 ## Role Variables
 
-| Variable             | Default     | Comments (type)                                   |
-| :---                 | :---        | :---                                              |
-| `sudoers_sudoers` | `/etc/sudoers` | file declarations |
-| `sudoers_sudoers.defaults`| see `defaults/main.yml`   | Default configuration options |
-| `sudoers_sudoers.host_aliases`  | `[]`   | A list of aliases of type `Host_Alias` |
-| `sudoers_sudoers.host_aliases.name`: | | Name of the alias |
-| `sudoers_sudoers.host_aliases.members` | |  Member(s) of the alias |
-| `sudoers_sudoers.user_aliases`  | `[]`   | A list of aliases of type `User_Alias` |
-| `sudoers_sudoers.user_aliases.name` | | Name of the alias |
-| `sudoers_sudoers.user_aliases.members` |  | Member(s) of the alias |
-| `sudoers_sudoers.cmnd_aliases`  | `[]`   | A list of aliases of type `Cmnd_Alias` |
-| `sudoers_sudoers.cmnd_aliases.name` | | Name of the alias |
-| `sudoers_sudoers.cmnd_aliases.members` | | Member(s) of the alias |
-| `sudoers_sudoers.runas_aliases`  | `[]`   | A list of aliases of type `Runas_Alias` |
-| `sudoers_sudoers.runas_aliases.name` | | Name of the alias |
-| `sudoers_sudoers.runas_aliases.members`| | Member(s) of the alias |
-| `sudoers_sudoers.privileges`  | see `defaults/main.yml`   | List of privileges |
-| `sudoers_sudoers.privileges.name` | | Name of user or group (group should be prefixed with '%')
-| `sudoers_sudoers.privileges.entry` | | A privilege entry |
-| `sudoers_sudoers_d_files` | `{}`   | `/etc/sudoers.d/*` file(s) declarations |
-| `sudoers_sudoers_d_files.key` | | The name of the sudoers configuration file (e.g `vagrant`) |
-| `sudoers_sudoers_d_files.key.defaults` | `[]`   | Default configuration options |
-| `sudoers_sudoers_d_files.key.host_aliases` | `[]`   | A list of aliases of type `Host_Alias` |
-| `sudoers_sudoers_d_files.key.host_aliases.name` | | Name of the alias |
-| `sudoers_sudoers_d_files.key.host_aliases.members` | | Member(s) of the alias |
-| `sudoers_sudoers_d_files.key.user_aliases` | `[]`   | A list of aliases of type `User_Alias` |
-| `sudoers_sudoers_d_files.key.user_aliases.name` | | Name of the alias |
-| `sudoers_sudoers_d_files.key.user_aliases.members`| | Member(s) of the alias |
-| `sudoers_sudoers_d_files.key.cmnd_aliases` | `[]`   | A list of aliases of type `Cmnd_Alias` |
-| `sudoers_sudoers_d_files.key.cmnd_aliases.name` | | Name of the alias |
-| `sudoers_sudoers_d_files.key.cmnd_aliases.members` | | Member(s) of the alias |
-| `sudoers_sudoers_d_files.key.runas_aliases` | `[]`   | A list of aliases of type `Runas_Alias` |
-| `sudoers_sudoers_d_files.key.runas_aliases.name` | | Name of the alias |
-| `sudoers_sudoers_d_files.key.runas_aliases.members` | | Member(s) of the alias |
-| `sudoers_sudoers_d_files.key.privileges` | `[]`   | List of privileges |
-| `sudoers_sudoers_d_files.key.privileges.name` | | Name of user or group (group should be prefixed with '%') |
-| `sudoers_sudoers_d_files.key.privileges.entry`| | A privilege entry |
-| `sudoers_use_os_defaults` | `True` | Includes default rules that ship with target distro (boolean) |
+| Variable                                            | Default                 | Comments (type)                                               |
+| :-------------------------------------------------- | :---------------------- | :------------------------------------------------------------ |
+| `sudoers_sudoers`                                   | `/etc/sudoers`          | file declarations                                             |
+| `sudoers_sudoers.defaults`                          | see `defaults/main.yml` | Default configuration options                                 |
+| `sudoers_sudoers.host_aliases`                      | `[]`                    | A list of aliases of type `Host_Alias`                        |
+| `sudoers_sudoers.host_aliases.name`:                |                         | Name of the alias                                             |
+| `sudoers_sudoers.host_aliases.members`              |                         | Member(s) of the alias                                        |
+| `sudoers_sudoers.user_aliases`                      | `[]`                    | A list of aliases of type `User_Alias`                        |
+| `sudoers_sudoers.user_aliases.name`                 |                         | Name of the alias                                             |
+| `sudoers_sudoers.user_aliases.members`              |                         | Member(s) of the alias                                        |
+| `sudoers_sudoers.cmnd_aliases`                      | `[]`                    | A list of aliases of type `Cmnd_Alias`                        |
+| `sudoers_sudoers.cmnd_aliases.name`                 |                         | Name of the alias                                             |
+| `sudoers_sudoers.cmnd_aliases.members`              |                         | Member(s) of the alias                                        |
+| `sudoers_sudoers.runas_aliases`                     | `[]`                    | A list of aliases of type `Runas_Alias`                       |
+| `sudoers_sudoers.runas_aliases.name`                |                         | Name of the alias                                             |
+| `sudoers_sudoers.runas_aliases.members`             |                         | Member(s) of the alias                                        |
+| `sudoers_sudoers.privileges`                        | see `defaults/main.yml` | List of privileges                                            |
+| `sudoers_sudoers.privileges.name`                   |                         | Name of user or group (group should be prefixed with '%')     |
+| `sudoers_sudoers.privileges.entry`                  |                         | A privilege entry                                             |
+| `sudoers_sudoers_d_files`                           | `{}`                    | `/etc/sudoers.d/*` file(s) declarations                       |
+| `sudoers_sudoers_d_files.key`                       |                         | The name of the sudoers configuration file (e.g `vagrant`)    |
+| `sudoers_sudoers_d_files.key.defaults`              | `[]`                    | Default configuration options                                 |
+| `sudoers_sudoers_d_files.key.host_aliases`          | `[]`                    | A list of aliases of type `Host_Alias`                        |
+| `sudoers_sudoers_d_files.key.host_aliases.name`     |                         | Name of the alias                                             |
+| `sudoers_sudoers_d_files.key.host_aliases.members`  |                         | Member(s) of the alias                                        |
+| `sudoers_sudoers_d_files.key.user_aliases`          | `[]`                    | A list of aliases of type `User_Alias`                        |
+| `sudoers_sudoers_d_files.key.user_aliases.name`     |                         | Name of the alias                                             |
+| `sudoers_sudoers_d_files.key.user_aliases.members`  |                         | Member(s) of the alias                                        |
+| `sudoers_sudoers_d_files.key.cmnd_aliases`          | `[]`                    | A list of aliases of type `Cmnd_Alias`                        |
+| `sudoers_sudoers_d_files.key.cmnd_aliases.name`     |                         | Name of the alias                                             |
+| `sudoers_sudoers_d_files.key.cmnd_aliases.members`  |                         | Member(s) of the alias                                        |
+| `sudoers_sudoers_d_files.key.runas_aliases`         | `[]`                    | A list of aliases of type `Runas_Alias`                       |
+| `sudoers_sudoers_d_files.key.runas_aliases.name`    |                         | Name of the alias                                             |
+| `sudoers_sudoers_d_files.key.runas_aliases.members` |                         | Member(s) of the alias                                        |
+| `sudoers_sudoers_d_files.key.privileges`            | `[]`                    | List of privileges                                            |
+| `sudoers_sudoers_d_files.key.privileges.name`       |                         | Name of user or group (group should be prefixed with '%')     |
+| `sudoers_sudoers_d_files.key.privileges.entry`      |                         | A privilege entry                                             |
+| `sudoers_use_os_defaults`                           | `True`                  | Includes default rules that ship with target distro (boolean) |
 
 ## Dependencies
 
@@ -99,11 +101,11 @@ None
           members: /usr/sbin/halt
       privileges:
         - name: root
-          entry: "ALL=(ALL:ALL) ALL"
-        - name: "%admin"
-          entry: "ALL=(ALL) ALL"
-        - name: "%sudo"
-          entry: "ALL=NOPASSWD:ALL"
+          entry: 'ALL=(ALL:ALL) ALL'
+        - name: '%admin'
+          entry: 'ALL=(ALL) ALL'
+        - name: '%sudo'
+          entry: 'ALL=NOPASSWD:ALL'
     sudoers_sudoers_d_files:
       test:
         defaults:
@@ -116,30 +118,14 @@ None
             members: 128.138.0.0/255.255.0.0
         privileges:
           - name: test
-            entry: "ALL=(ALL:ALL) ALL"
+            entry: 'ALL=(ALL:ALL) ALL'
 ```
-
-## Changelog
-
-### 1.2
-
-* Always prepend OS defaults and privileges unless disabled
-* fix variables files found
-
-### 1.1
-
-* rename role name
-* add new tests
-
-### 1.0
-
-* Initial release
 
 ## Author
 
-* [Simon Bärlocher](https://sbaerlocher.ch)
-* Mark van Driel
-* Mischa ter Smitten
+- [Simon Bärlocher](https://sbaerlocher.ch)
+- Mark van Driel
+- Mischa ter Smitten
 
 ## License
 
@@ -147,4 +133,4 @@ This project is under the MIT License. See the [LICENSE](https://sbaerlo.ch/lice
 
 ## Copyright
 
-(c) 2018, Simon Bärlocher
+(c) 2019, Arillso
