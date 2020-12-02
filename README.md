@@ -1,6 +1,10 @@
 # Ansible Role: sudoers
 
-[![Build Status](https://img.shields.io/travis/arillso/ansible.sudoers.svg?branch=master&style=popout-square)](https://travis-ci.org/arillso/ansible.sudoers) [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=popout-square)](https://sbaerlo.ch/licence) [![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-sudoers-blue.svg?style=popout-square)](https://galaxy.ansible.com/arillso/sudoers) [![Ansible Role](https://img.shields.io/ansible/role/d/21620.svg?style=popout-square)](https://galaxy.ansible.com/arillso/sudoers)
+<!-- markdownlint-disable MD013 -->
+
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&logo=Open%20Source%20Initiative)](LICENSE) [![Ansible Role](https://img.shields.io/ansible/role/21620?label=role%20name&style=flat-square&logo=ansible)](https://galaxy.ansible.com/arillso/sudoers) [![Ansible Role](https://img.shields.io/ansible/role/d/21620.svg?style=flat-square&logo=ansible)](https://galaxy.ansible.com/arillso/sudoers) [![Ansible Quality Score](https://img.shields.io/ansible/quality/21620?label=role%20quality&style=flat-square&logo=ansible)](https://galaxy.ansible.com/arillso/sudoers) [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/arillso/ansible.sudoers?style=flat-square&logo=github)](https://github.com/arillso/ansible.sudoers/releases) [![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/arillso/ansible.sudoers/Role%20Tests/master?label=integration%20tests&style=flat-square&logo=github)](https://github.com/arillso/ansible.sudoers/actions?query=workflow%3A%22Role+Tests%22)
+
+<!-- markdownlint-enable MD013 -->
 
 ## Description
 
