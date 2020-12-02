@@ -1,25 +1,28 @@
 ---
 galaxy_info:
-  author: arillso
+  role_name: sudores
+  author: arillso <team@arillso.io>
   description: Manage sudoers and sudoers.d in Linux.
   license: MIT
-  min_ansible_version: 2.8
+  min_ansible_version: 2.10
   platforms:
+    - name: Alpine
+      versions:
+        - any
     - name: EL
       versions:
         - 7
-    - name: Fedora
-      versions:
-        - 29
+        - 8
     - name: Ubuntu
       versions:
         - bionic
-        - cosmic
+        - focal
+        - xenial
     - name: Debian
       versions:
-        - jessie
-        - stretch
+        - bullseye
         - buster
+        - sid
 
   galaxy_tags:
     - sudo

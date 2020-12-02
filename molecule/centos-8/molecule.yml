@@ -1,0 +1,25 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint: |
+  set -e
+  yamllint .
+  ansible-lint ../arillso.sudoers
+  flake8
+platforms:
+  - name: centos-8
+    image: arillso/centos:8
+    privileged: true
+    command: /usr/sbin/init
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+provisioner:
+  name: ansible
+  playbooks:
+    converge: ../default/converge.yml
+  env:
+    ANSIBLE_ROLES_PATH: ../../
+verifier:
+  name: ansible

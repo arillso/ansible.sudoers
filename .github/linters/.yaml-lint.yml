@@ -1,0 +1,10 @@
+---
+extends: default
+rules:
+  line-length: disable
+  comments: disable
+
+ignore: |
+  .github/workflows/*
+  */lint.yml
+  */release.yml

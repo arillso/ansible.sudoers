@@ -3,6 +3,18 @@
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 and [human-readable changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2.0.0
+
+### Added
+
+- Added github action for the integration tests.
+- Added test scenario for different OS.
+- Added compatibility for Ansible 2.10.
+
+### Removed
+
+- Degreasing support for Ansible Version under 2.9.
+
 ## 1.2.1
 
 ### Changed

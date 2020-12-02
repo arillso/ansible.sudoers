@@ -1,0 +1,9 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    ansible_python_interpreter: auto_silent
+  tasks:
+    - name: 'Include arillso.sudoers'
+      include_role:
+        name: 'arillso.sudoers'
