@@ -12,19 +12,19 @@ jobs:
 
     defaults:
       run:
-        working-directory: arillso.hosts
+        working-directory: arillso.sudoers
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
         with:
-          path: arillso.hosts
+          path: arillso.sudoers
 
       - name: Test Ansible with Molecule
         uses: arillso/action.molecule@0.0.1
         with:
           command: test
-          working_directory: arillso.hosts
+          working_directory: arillso.sudoers
 
   publish:
     runs-on: ubuntu-latest
