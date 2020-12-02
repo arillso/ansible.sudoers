@@ -1,6 +1,9 @@
 ---
 # defaults file for arillso.sudoers
 
+sudoers_package:
+  - sudo
+
 sudoers_sudoers:
   defaults: []
   privileges: []

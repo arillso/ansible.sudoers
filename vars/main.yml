@@ -1,4 +1,0 @@
-# vars file for arillso.sudoers
----
-sudoers_dependencies:
-  - sudo
