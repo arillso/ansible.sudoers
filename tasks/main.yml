@@ -47,7 +47,7 @@
   become: true
   ansible.builtin.template:
     src: etc/sudoers.j2
-    dest: /etc/sudoers
+    dest: '{{ sudoers_sudoers_file }}'
     validate: 'visudo -cf %s'
     owner: root
     group: root
