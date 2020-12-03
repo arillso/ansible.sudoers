@@ -63,46 +63,46 @@ sudoers_sudoers:
 
 A list of aliases of type `Host_Alias`
 
-| Variable                               | Default | Comments (type)        |
-| :------------------------------------- | :------ | :--------------------- |
-| `sudoers_sudoers.host_aliases.name`:   |         | Name of the alias      |
-| `sudoers_sudoers.host_aliases.members` |         | Member(s) of the alias |
+| Variable                               | Comments (type)        |
+| :------------------------------------- | :--------------------- |
+| `sudoers_sudoers.host_aliases.name`:   | Name of the alias      |
+| `sudoers_sudoers.host_aliases.members` | Member(s) of the alias |
 
 #### `sudoers_sudoers.user_aliases`
 
 A list of aliases of type `User_Alias`
 
-| Variable                               | Default | Comments (type)        |
-| :------------------------------------- | :------ | :--------------------- |
-| `sudoers_sudoers.user_aliases.name`    |         | Name of the alias      |
-| `sudoers_sudoers.user_aliases.members` |         | Member(s) of the alias |
+| Variable                               | Comments (type)        |
+| :------------------------------------- | :--------------------- |
+| `sudoers_sudoers.user_aliases.name`    | Name of the alias      |
+| `sudoers_sudoers.user_aliases.members` | Member(s) of the alias |
 
 #### sudoers_sudoers.cmnd_aliases
 
 A list of aliases of type `Cmnd_Alias`
 
-| Variable                               | Default | Comments (type)        |
-| :------------------------------------- | :------ | :--------------------- |
-| `sudoers_sudoers.cmnd_aliases.name`    |         | Name of the alias      |
-| `sudoers_sudoers.cmnd_aliases.members` |         | Member(s) of the alias |
+| Variable                               | Comments (type)        |
+| :------------------------------------- | :--------------------- |
+| `sudoers_sudoers.cmnd_aliases.name`    | Name of the alias      |
+| `sudoers_sudoers.cmnd_aliases.members` | Member(s) of the alias |
 
 #### sudoers_sudoers.runas_aliases
 
 A list of aliases of type `Runas_Alias`
 
-| Variable                                | Default | Comments (type)        |
-| :-------------------------------------- | :------ | :--------------------- |
-| `sudoers_sudoers.runas_aliases.name`    |         | Name of the alias      |
-| `sudoers_sudoers.runas_aliases.members` |         | Member(s) of the alias |
+| Variable                                | Comments (type)        |
+| :-------------------------------------- | :--------------------- |
+| `sudoers_sudoers.runas_aliases.name`    | Name of the alias      |
+| `sudoers_sudoers.runas_aliases.members` | Member(s) of the alias |
 
 #### sudoers_sudoers.privileges`
 
 List of privileges
 
-| Variable                           | Default | Comments (type)                                           |
-| :--------------------------------- | :------ | :-------------------------------------------------------- |
-| `sudoers_sudoers.privileges.name`  |         | Name of user or group (group should be prefixed with '%') |
-| `sudoers_sudoers.privileges.entry` |         | A privilege entry                                         |
+| Variable                           | Comments (type)                                           |
+| :--------------------------------- | :-------------------------------------------------------- |
+| `sudoers_sudoers.privileges.name`  | Name of user or group (group should be prefixed with '%') |
+| `sudoers_sudoers.privileges.entry` | A privilege entry                                         |
 
 ### Example
 
