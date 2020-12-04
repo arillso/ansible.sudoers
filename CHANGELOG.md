@@ -1,0 +1,55 @@
+# Changelog
+
+This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
+and [human-readable changelog](https://keepachangelog.com/en/1.0.0/).
+
+## 2.0.0
+
+### Added
+
+- Added github action for the integration tests.
+- Added test scenario for different OS.
+- Added compatibility for Ansible 2.10.
+
+### Removed
+
+- Degreasing support for Ansible Version under 2.9.
+
+## 1.2.1
+
+### Changed
+
+- update min ansible version to 2.8
+- changelog to your own file
+- travis file has been updated
+- Documentation has been improved
+
+### Added
+
+- molecule testing
+
+## 1.2.0
+
+### Added
+
+- Always prepend OS defaults and privileges unless disabled
+
+### Fixed
+
+- fix variables files found
+
+## 1.1.0
+
+### Changed
+
+- rename role name
+
+### Added
+
+- add new tests
+
+## 1.0.0
+
+### Added
+
+- Initial release
