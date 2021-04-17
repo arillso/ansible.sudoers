@@ -3,7 +3,7 @@
 
 sudoers_sudoers_preset_defaults:
   - env_reset
-  - 'secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"'
+  - 'secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"'
 
 sudoers_sudoers_preset_privileges:
   - name: root
