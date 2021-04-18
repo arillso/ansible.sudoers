@@ -4,7 +4,7 @@ dependency:
 driver:
   name: docker
 lint: |
-  yamllint .
+  yamllint -c .github/linters/.yaml-lint.yml .
   ansible-lint ../arillso.sudoers
   flake8
 platforms:
