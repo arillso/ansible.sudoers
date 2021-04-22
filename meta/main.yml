@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: sudoeres
+  role_name: sudoers
   author: arillso <team@arillso.io>
   description: Manage sudoers and sudoers.d in Linux.
   license: MIT
