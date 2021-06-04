@@ -21,7 +21,7 @@ jobs:
           path: arillso.sudoers
 
       - name: Test Ansible with Molecule
-        uses: arillso/action.molecule@0.0.1
+        uses: arillso/action.molecule@0.0.2
         with:
           command: test
           working_directory: arillso.sudoers
