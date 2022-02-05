@@ -3,6 +3,17 @@
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 and [human-readable changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2.2.0
+
+### Changed
+
+- Bump arillso/action.molecule from 0.0.1 to 0.0.5
+- Bump github/super-linter from 3 to 4.8.7
+
+### Add
+
+- Variables added for rocky linux support.
+
 ## 2.1.2
 
 ### Fixed
@@ -29,7 +40,7 @@ and [human-readable changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 
-- Added github action for the integration tests.
+- Added GitHub action for the integration tests.
 - Added test scenario for different OS.
 - Added compatibility for Ansible 2.10.
 
