@@ -2,7 +2,7 @@
 
 <!-- markdownlint-disable MD013 -->
 
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&logo=Open%20Source%20Initiative)](LICENSE) [![Ansible Role](https://img.shields.io/ansible/role/21620?label=role%20name&style=flat-square&logo=ansible)](https://galaxy.ansible.com/arillso/sudoers) [![Ansible Role](https://img.shields.io/ansible/role/d/21620.svg?style=flat-square&logo=ansible)](https://galaxy.ansible.com/arillso/sudoers) [![Ansible Quality Score](https://img.shields.io/ansible/quality/21620?label=role%20quality&style=flat-square&logo=ansible)](https://galaxy.ansible.com/arillso/sudoers) [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/arillso/ansible.sudoers?style=flat-square&logo=github)](https://github.com/arillso/ansible.sudoers/releases) [![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/arillso/ansible.sudoers/Role%20Tests/main?label=integration%20tests&style=flat-square&logo=github)](https://github.com/arillso/ansible.sudoers/actions?query=workflow%3A%22Role+Tests%22)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&logo=Open%20Source%20Initiative)](LICENSE) [![Ansible Role](https://img.shields.io/ansible/role/54450?label=role%20name&style=flat-square&logo=ansible)](https://galaxy.ansible.com/arillso/sudoers) [![Ansible Role](https://img.shields.io/ansible/role/d/54450.svg?style=flat-square&logo=ansible)](https://galaxy.ansible.com/arillso/sudoers) [![Ansible Quality Score](https://img.shields.io/ansible/quality/54450?label=role%20quality&style=flat-square&logo=ansible)](https://galaxy.ansible.com/arillso/sudoers) [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/arillso/ansible.sudoers?style=flat-square&logo=github)](https://github.com/arillso/ansible.sudoers/releases) [![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/arillso/ansible.sudoers/Role%20Tests/main?label=integration%20tests&style=flat-square&logo=github)](https://github.com/arillso/ansible.sudoers/actions?query=workflow%3A%22Role+Tests%22)
 
 <!-- markdownlint-enable MD013 -->
 
@@ -212,4 +212,4 @@ This project is under the MIT License. See the [LICENSE](licence) file for the f
 
 ## Copyright
 
-(c) 2020, Arillso
+(c) 2022, Arillso

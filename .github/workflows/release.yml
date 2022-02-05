@@ -5,36 +5,10 @@ on:
     types: [published]
 
 jobs:
-  release:
-    runs-on: ubuntu-latest
-
-    name: Role Release Test
-
-    defaults:
-      run:
-        working-directory: arillso.sudoers
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2.3.4
-        with:
-          path: arillso.sudoers
-
-      - name: Test Ansible with Molecule
-        uses: arillso/action.molecule@0.0.5
-        with:
-          command: test
-          working_directory: arillso.sudoers
-
   publish:
     runs-on: ubuntu-latest
 
     name: Role Release Publish
-
-    if: always()
-    needs:
-      - release
-
     steps:
       - name: Release Ansible Role to Galaxy
         uses: robertdebock/galaxy-action@1.1.1
