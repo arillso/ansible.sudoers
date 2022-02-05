@@ -8,26 +8,9 @@ lint: |
   ansible-lint ../arillso.sudoers
   flake8
 platforms:
-  - name: alpine-3.11
-    image: arillso/alpine:3.11
+  - name: alpine-3.15
+    image: arillso/alpine:3.15
     privileged: true
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-  - name: alpine-3.12
-    image: arillso/alpine:3.12
-    privileged: true
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-  - name: centos-7
-    image: arillso/centos:7
-    privileged: true
-    command: /usr/sbin/init
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-  - name: centos-8
-    image: arillso/centos:8
-    privileged: true
-    command: /usr/sbin/init
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
   - name: debian-10
@@ -42,26 +25,8 @@ platforms:
     command: /lib/systemd/systemd
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
-  - name: debian-sid
-    image: arillso/debian:sid
-    privileged: true
-    command: /lib/systemd/systemd
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-  - name: ubuntu-bionic
-    image: arillso/ubuntu:bionic
-    privileged: true
-    command: /lib/systemd/systemd
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-  - name: ubuntu-focal
-    image: arillso/ubuntu:focal
-    privileged: true
-    command: /lib/systemd/systemd
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-  - name: ubuntu-xenial
-    image: arillso/ubuntu:xenial
+  - name: ubuntu-20.04
+    image: arillso/ubuntu:20.04
     privileged: true
     command: /lib/systemd/systemd
     volumes:

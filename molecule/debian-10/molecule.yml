@@ -9,9 +9,10 @@ lint: |
   ansible-lint ../arillso.sudoers
   flake8
 platforms:
-  - name: alpine-3.12
-    image: arillso/alpine:3.12
+  - name: debian-10
+    image: arillso/debian:10
     privileged: true
+    command: /lib/systemd/systemd
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
 provisioner:

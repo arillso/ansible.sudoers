@@ -9,8 +9,8 @@ lint: |
   ansible-lint ../arillso.sudoers
   flake8
 platforms:
-  - name: ubuntu-xenial
-    image: arillso/ubuntu:xenial
+  - name: ubuntu-20.04
+    image: arillso/ubuntu:20.04
     privileged: true
     command: /lib/systemd/systemd
     volumes:

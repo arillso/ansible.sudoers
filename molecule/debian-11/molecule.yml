@@ -9,8 +9,8 @@ lint: |
   ansible-lint ../arillso.sudoers
   flake8
 platforms:
-  - name: ubuntu-bionic
-    image: arillso/ubuntu:bionic
+  - name: debian-11
+    image: arillso/debian:11
     privileged: true
     command: /lib/systemd/systemd
     volumes:
