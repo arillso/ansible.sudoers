@@ -59,6 +59,30 @@ sudoers_sudoers:
   defaults: []
 ```
 
+#### sudoers_sudoers.defaults_*
+
+Support for additional default types.
+
+Sudoers manual excerpt:
+
+```
+Default_Type ::= 'Defaults' |
+                 'Defaults' '@' Host_List |
+                 'Defaults' ':' User_List |
+                 'Defaults' '!' Cmnd_List |
+                 'Defaults' '>' Runas_List
+```
+
+Variables:
+
+```yml
+sudoers_sudoers:
+  defaults_host: []
+  defaults_user: []
+  defaults_cmnd: []
+  defaults_runas: []
+```
+
 #### sudoers_sudoers.host_aliases
 
 A list of aliases of type `Host_Alias`
@@ -113,6 +137,18 @@ sudoers_sudoers:
     - exempt_group=sudo
     - mail_badpass
     - secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+  defaults_host:
+    - host_list: SERVERS
+      entry: log_year, logfile=/var/log/sudo.log
+  defaults_user: 
+    - user_list: FULLTIMERS
+      entry: '!lecture'
+  defaults_cmnd: 
+    - cmnd_list: PAGERS
+      entry: noexec
+  defaults_runas:
+    - runas_list: root
+      entry: '!set_logname'
   host_aliases:
     - name: CUNETS
       members: 128.138.0.0/255.255.0.0
@@ -153,6 +189,10 @@ sudoers_sudoers_d_files:
 | Variable                                            | Default | Comments (type)                                           |
 | :-------------------------------------------------- | :------ | :-------------------------------------------------------- |
 | `sudoers_sudoers_d_files.key.defaults`              | `[]`    | Default configuration options                             |
+| `sudoers_sudoers_d_files.key.defaults_host`         | `[]`    | Defaults@ configuration options                           |
+| `sudoers_sudoers_d_files.key.defaults_user`         | `[]`    | Defaults: configuration options                           |
+| `sudoers_sudoers_d_files.key.defaults_cmnd`         | `[]`    | Defaults! configuration options                           |
+| `sudoers_sudoers_d_files.key.defaults_runas`        | `[]`    | Defaults> configuration options                           |
 | `sudoers_sudoers_d_files.key.host_aliases`          | `[]`    | A list of aliases of type `Host_Alias`                    |
 | `sudoers_sudoers_d_files.key.host_aliases.name`     |         | Name of the alias                                         |
 | `sudoers_sudoers_d_files.key.host_aliases.members`  |         | Member(s) of the alias                                    |
@@ -179,6 +219,9 @@ sudoers_sudoers_d_files:
       - exempt_group=sudo
       - mail_badpass
       - secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+    defaults_user:
+      - user_list: test
+        entry: '!authenticate'
     host_aliases:
       - name: WORKSTATIONS
         members: 128.138.0.0/255.255.0.0

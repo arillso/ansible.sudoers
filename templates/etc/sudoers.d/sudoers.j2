@@ -3,6 +3,18 @@
 {% for item in item.value.defaults | default([]) %}
 Defaults {{ item }}
 {% endfor %}
+{% for item in item.value.defaults_host | default([]) %}
+Defaults@{{ item.host_list }} {{ item.entry }}
+{% endfor %}
+{% for item in item.value.defaults_user | default([]) %}
+Defaults:{{ item.user_list }} {{ item.entry }}
+{% endfor %}
+{% for item in item.value.defaults_cmnd | default([]) %}
+Defaults!{{ item.cmnd_list }} {{ item.entry }}
+{% endfor %}
+{% for item in item.value.defaults_runas | default([]) %}
+Defaults>{{ item.runas_list }} {{ item.entry }}
+{% endfor %}
 
 # Host alias specification
 {% for item in item.value.host_aliases | default([]) %}
