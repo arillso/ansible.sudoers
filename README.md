@@ -65,7 +65,7 @@ Support for additional default types.
 
 Sudoers manual excerpt:
 
-```
+```yml
 Default_Type ::= 'Defaults' |
                  'Defaults' '@' Host_List |
                  'Defaults' ':' User_List |
