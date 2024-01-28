@@ -23,7 +23,7 @@
     - configuration
     - packages
 
-- name: Install sudores package
+- name: Install sudoers package
   become: true
   ansible.builtin.package:
     name: '{{ sudoers_package }}'
